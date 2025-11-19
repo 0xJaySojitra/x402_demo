@@ -244,7 +244,7 @@ const provider = new ethers.JsonRpcProvider('https://sepolia.base.org');
 const wallet = new ethers.Wallet(privateKey, provider);
 
 // USDC contract on Base Sepolia
-const usdcAddress = '0x036CbD53842c5426634e7929541eC2318f3dCF7e';
+const usdcAddress = '0xEF2C3C652033e9d27F9630EE6717e7fE59276C92';
 const facilitatorAddress = '0x...'; // Get from facilitator docs
 
 const usdc = new ethers.Contract(

@@ -51,7 +51,7 @@ const BUILT_IN_NETWORKS: Record<
   },
   'base-sepolia': {
     chainId: 84532,
-    assetAddress: '0x036CbD53842c5426634e7929541eC2318f3dCF7e',
+    assetAddress: '0xEF2C3C652033e9d27F9630EE6717e7fE59276C92',
     assetName: 'USDC',
     explorer: 'https://sepolia.basescan.org',
   },
@@ -127,6 +127,7 @@ export interface MerchantExecutorOptions {
   privateKey?: string;
   assetAddress?: string;
   assetName?: string;
+  assetVersion?: string;
   explorerUrl?: string;
   chainId?: number;
 }
@@ -155,6 +156,7 @@ export class MerchantExecutor {
   private settlementWallet?: ethers.Wallet;
   private readonly network: Network;
   private readonly assetName: string;
+  private readonly assetVersion: string;
   private readonly chainId?: number;
 
   constructor(options: MerchantExecutorOptions) {
@@ -165,6 +167,7 @@ export class MerchantExecutor {
     const assetAddress =
       options.assetAddress ?? builtinConfig?.assetAddress;
     const assetName = options.assetName ?? builtinConfig?.assetName;
+    const assetVersion = options.assetVersion ?? '2';
     const chainId = options.chainId ?? builtinConfig?.chainId;
     const explorerUrl = options.explorerUrl ?? builtinConfig?.explorer;
 
@@ -182,6 +185,7 @@ export class MerchantExecutor {
 
     this.network = options.network;
     this.assetName = assetName;
+    this.assetVersion = assetVersion;
     this.chainId = chainId;
     this.explorerUrl = explorerUrl;
 
@@ -197,7 +201,7 @@ export class MerchantExecutor {
       maxTimeoutSeconds: 600,
       extra: {
         name: assetName,
-        version: '2',
+        version: assetVersion,
       },
     };
 
@@ -579,7 +583,7 @@ export class MerchantExecutor {
   private buildEip712Domain(requirements: PaymentRequirements) {
     return {
       name: requirements.extra?.name || this.assetName,
-      version: requirements.extra?.version || '2',
+      version: requirements.extra?.version || this.assetVersion,
       chainId: this.chainId,
       verifyingContract: requirements.asset,
     };

@@ -31,6 +31,7 @@ const RPC_URL = process.env.RPC_URL;
 const SETTLEMENT_MODE_ENV = process.env.SETTLEMENT_MODE?.toLowerCase();
 const ASSET_ADDRESS = process.env.ASSET_ADDRESS;
 const ASSET_NAME = process.env.ASSET_NAME;
+const ASSET_VERSION = process.env.ASSET_VERSION;
 const EXPLORER_URL = process.env.EXPLORER_URL;
 const CHAIN_ID = process.env.CHAIN_ID
   ? Number.parseInt(process.env.CHAIN_ID, 10)
@@ -151,6 +152,7 @@ const merchantOptions: MerchantExecutorOptions = {
   privateKey: PRIVATE_KEY,
   assetAddress: ASSET_ADDRESS,
   assetName: ASSET_NAME,
+  assetVersion: ASSET_VERSION,
   explorerUrl: EXPLORER_URL,
   chainId: CHAIN_ID,
 };

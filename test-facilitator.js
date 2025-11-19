@@ -99,9 +99,9 @@ async function testFacilitator() {
     accepts: [{
       scheme: 'exact',
       network: NETWORK,
-      asset: '0x036CbD53842c5426634e7929541eC2318f3dCF7e', // USDC on Base Sepolia
+      asset: '0xEF2C3C652033e9d27F9630EE6717e7fE59276C92', // USDC on Base Sepolia
       payTo: PAY_TO_ADDRESS,
-      maxAmountRequired: '100000', // $0.10
+      maxAmountRequired: '1', // $0.10
       resource: '/test-resource',
       description: 'Test payment',
       mimeType: 'application/json',

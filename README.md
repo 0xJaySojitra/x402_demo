@@ -217,7 +217,7 @@ This will:
 - Test paid requests (if CLIENT_PRIVATE_KEY is configured)
 - Show the complete payment flow
 
-See [TESTING.md](./TESTING.md) for detailed testing documentation.
+See [Troubleshooting & API Reference](./docs/troubleshooting-guide.md) for detailed testing documentation.
 
 #### 3. Manual Testing (Simple)
 
@@ -261,7 +261,7 @@ curl -X POST http://localhost:3000/process \
       {
         "scheme": "exact",
         "network": "base-sepolia",
-        "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+        "asset": "0xEF2C3C652033e9d27F9630EE6717e7fE59276C92",
         "payTo": "0xYourAddress...",
         "maxAmountRequired": "100000",
         "resource": "/process-request",
@@ -331,8 +331,14 @@ x402-developer-starter-kit/
 ├── package.json
 ├── tsconfig.json
 ├── .env.example
+├── docs/                         # 📚 Comprehensive documentation (5 guides)
+│   ├── README.md                  # Documentation index
+│   ├── x402-protocol-overview.md  # Complete protocol guide + quick start
+│   ├── payment-flow-guide.md      # Payment flow details
+│   ├── architecture-guide.md      # Code structure guide
+│   ├── token-support-guide.md     # Tokens, facilitators & RPC config
+│   └── troubleshooting-guide.md   # Issues, solutions & API reference
 ├── README.md
-├── TESTING.md
 └── test-request.sh
 ```
 
@@ -409,8 +415,19 @@ If you hit OpenAI rate limits, consider:
 
 ISC
 
+## Documentation
+
+📚 **Comprehensive documentation is available in the [`docs/`](./docs/) folder:**
+
+- [**x402 Protocol Overview**](./docs/x402-protocol-overview.md) - Complete guide to the x402 protocol
+- [**Payment Flow Guide**](./docs/payment-flow-guide.md) - Detailed payment flow documentation  
+- [**Architecture Guide**](./docs/architecture-guide.md) - Codebase structure and file purposes
+- [**Token & Facilitator Guide**](./docs/token-support-guide.md) - Tokens, facilitator modes, and RPC configuration
+- [**Troubleshooting & API Reference**](./docs/troubleshooting-guide.md) - Common issues, solutions, and complete API docs
+
 ## Resources
 
 - [x402 Package on npm](https://www.npmjs.com/package/x402)
 - [A2A Specification](https://github.com/google/a2a)
 - [OpenAI API Documentation](https://platform.openai.com/docs)
+- [x402 Official Website](https://learnx402.dev)

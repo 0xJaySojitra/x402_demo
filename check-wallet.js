@@ -11,7 +11,7 @@ const NETWORK = process.env.NETWORK || 'base-sepolia';
 const networks = {
   'base-sepolia': {
     rpc: 'https://sepolia.base.org',
-    usdc: '0x036CbD53842c5426634e7929541eC2318f3dCF7e',
+    usdc: '0xEF2C3C652033e9d27F9630EE6717e7fE59276C92',
     chainId: 84532,
     name: 'Base Sepolia',
     explorer: 'https://sepolia.basescan.org',
